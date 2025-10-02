@@ -27,7 +27,11 @@
             }
 
             if($this->segments[0] == "filmes"){
-                require_once __DIR__ . "/./views/viewFilmes.php";
+                require_once __DIR__ . "/./controller/controllerFilmes.php";
+                
+                $controllerFilmes = new ControllerFilmes($_POST);
+                $controllerFilmes->consultFilme();
+                ControllerFilmes::exibirView();
             }
         }
     }
